@@ -1,6 +1,6 @@
 <template>
   <div class="gradient">
-    <gradient-color
+    <GradientColor
       v-for="(todo, index) in todos"
       :key="todo.name"
       :colors="todo.colors"
@@ -14,11 +14,11 @@ import { mapState } from "vuex";
 import GradientColor from "./GradientColor";
 export default {
   components: {
-    GradientColor
+    GradientColor,
   },
   computed: {
-    ...mapState(["todos", "currentIndex"])
-  }
+    ...mapState(["todos", "currentIndex"]),
+  },
 };
 </script>
 

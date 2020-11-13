@@ -1,7 +1,7 @@
 <template>
   <transition name="edit">
     <div class="todo-editing" v-if="!!editing">
-      <app-bar title="New Tasks" left="close" @left="toggleEditing" />
+      <AppBar title="New Tasks" left="close" @left="toggleEditing" />
       <div class="todo-editing_head">
         <p>What tasks are you planning to perform?</p>
       </div>
@@ -25,14 +25,14 @@ import { mapState, mapMutations } from "vuex";
 import AppBar from "./AppBar.vue";
 export default {
   components: {
-    AppBar
+    AppBar,
   },
   computed: {
-    ...mapState(["selected", "editing"])
+    ...mapState(["selected", "editing"]),
   },
   methods: {
-    ...mapMutations(["toggleEditing"])
-  }
+    ...mapMutations(["toggleEditing"]),
+  },
 };
 </script>
 

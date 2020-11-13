@@ -6,7 +6,7 @@
         :key="todo.name"
         :style="{ transform: `translate3d(-${currentIndex * 100}%, 0, 0)` }"
       >
-        <todo
+        <Todo
           :todo="todo"
           :selected="selected && todo === selected.todo"
           @select="selectTodo"
@@ -22,15 +22,15 @@ import Todo from "./Todo.vue";
 
 export default {
   components: {
-    Todo
+    Todo,
   },
   mounted() {
     let touch = {};
-    this.$el.addEventListener("touchstart", evt => {
+    this.$el.addEventListener("touchstart", (evt) => {
       touch.startX = evt.touches[0].clientX;
       touch.endX = 0;
     });
-    this.$el.addEventListener("touchmove", evt => {
+    this.$el.addEventListener("touchmove", (evt) => {
       touch.endX = evt.touches[0].clientX;
     });
     this.$el.addEventListener("touchend", () => {
@@ -45,11 +45,11 @@ export default {
     });
   },
   computed: {
-    ...mapState(["todos", "currentIndex", "selected"])
+    ...mapState(["todos", "currentIndex", "selected"]),
   },
   methods: {
-    ...mapMutations(["selectTodo", "nextTodo", "prevTodo"])
-  }
+    ...mapMutations(["selectTodo", "nextTodo", "prevTodo"]),
+  },
 };
 </script>
 
