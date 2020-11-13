@@ -17,24 +17,24 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
-let GID = 1
+import { mapMutations } from "vuex";
+let GID = 1;
 export default {
   props: {
     task: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
-  data () {
+  data() {
     return {
-      id: `task-${GID++}`
-    }
+      id: `task-${GID++}`,
+    };
   },
   methods: {
-    ...mapMutations(['deleteTask'])
-  }
-}
+    ...mapMutations(["deleteTask"]),
+  },
+};
 </script>
 
 <style lang="scss">
@@ -53,7 +53,7 @@ export default {
 }
 .task label:before,
 .task label:after {
-  content: '';
+  content: "";
   display: inline-block;
   margin-right: 20px;
   margin-top: 1px;
@@ -67,7 +67,7 @@ export default {
   background-color: white;
 }
 .task label:after {
-  content: '\f00c';
+  content: "\f00c";
   position: relative;
   display: none;
   z-index: 10;

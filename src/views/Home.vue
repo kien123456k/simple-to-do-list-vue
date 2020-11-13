@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import AppBar from '../components/AppBar.vue'
-import Avatar from '../components/Avatar.vue'
-import Gradient from '../components/Gradient.vue'
-import TodoList from '../components/TodoList.vue'
-import TodoDetail from '../components/TodoDetail.vue'
-import TodoEditing from '../components/TodoEditing.vue'
-import FloatingButton from '../components/FloatingButton.vue'
+import AppBar from "../components/AppBar.vue";
+import Avatar from "../components/Avatar.vue";
+import Gradient from "../components/Gradient.vue";
+import TodoList from "../components/TodoList.vue";
+import TodoDetail from "../components/TodoDetail.vue";
+import TodoEditing from "../components/TodoEditing.vue";
+import FloatingButton from "../components/FloatingButton.vue";
 export default {
   components: {
     AppBar,
@@ -28,7 +28,7 @@ export default {
     TodoEditing,
     FloatingButton
   }
-}
+};
 </script>
 
 <style>

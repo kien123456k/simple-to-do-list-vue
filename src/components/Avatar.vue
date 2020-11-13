@@ -17,12 +17,12 @@ import { mapState, mapGetters } from "vuex";
 export default {
   data() {
     return {
-      today: new Date(),
+      today: new Date()
     };
   },
   computed: {
     ...mapState(["selected"]),
-    ...mapGetters(["todayTasks"]),
+    ...mapGetters(["todayTasks"])
   },
   methods: {
     dateString(val) {
@@ -30,8 +30,8 @@ export default {
         .toDateString()
         .toUpperCase()
         .replace(/(\s\d{4})$/, ", $1");
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -20,11 +20,11 @@ export default {
       const colorLeft = `color-stop(30%, ${this.currentTodo.colors[0]})`;
       const colorRight = `to(${this.currentTodo.colors[1]})`;
       return `-webkit-gradient(linear, left bottom, right top, ${colorLeft}, ${colorRight})`;
-    },
+    }
   },
   methods: {
-    ...mapMutations(["toggleEditing"]),
-  },
+    ...mapMutations(["toggleEditing"])
+  }
 };
 </script>
 

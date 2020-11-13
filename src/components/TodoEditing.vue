@@ -21,19 +21,19 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
-import AppBar from './AppBar.vue'
+import { mapState, mapMutations } from "vuex";
+import AppBar from "./AppBar.vue";
 export default {
   components: {
     AppBar
   },
   computed: {
-    ...mapState(['selected', 'editing'])
+    ...mapState(["selected", "editing"])
   },
   methods: {
-    ...mapMutations(['toggleEditing'])
+    ...mapMutations(["toggleEditing"])
   }
-}
+};
 </script>
 
 <style lang="scss">

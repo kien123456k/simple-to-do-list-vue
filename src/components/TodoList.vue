@@ -17,40 +17,40 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
-import Todo from './Todo.vue'
+import { mapState, mapMutations } from "vuex";
+import Todo from "./Todo.vue";
 
 export default {
   components: {
     Todo
   },
-  mounted () {
-    let touch = {}
-    this.$el.addEventListener('touchstart', evt => {
-      touch.startX = evt.touches[0].clientX
-      touch.endX = 0
-    })
-    this.$el.addEventListener('touchmove', evt => {
-      touch.endX = evt.touches[0].clientX
-    })
-    this.$el.addEventListener('touchend', () => {
+  mounted() {
+    let touch = {};
+    this.$el.addEventListener("touchstart", evt => {
+      touch.startX = evt.touches[0].clientX;
+      touch.endX = 0;
+    });
+    this.$el.addEventListener("touchmove", evt => {
+      touch.endX = evt.touches[0].clientX;
+    });
+    this.$el.addEventListener("touchend", () => {
       if (!touch.endX || Math.abs(touch.endX - touch.startX) < 10) {
-        return
+        return;
       }
       if (touch.endX < touch.startX) {
-        this.nextTodo()
+        this.nextTodo();
       } else {
-        this.prevTodo()
+        this.prevTodo();
       }
-    })
+    });
   },
   computed: {
-    ...mapState(['todos', 'currentIndex', 'selected'])
+    ...mapState(["todos", "currentIndex", "selected"])
   },
   methods: {
-    ...mapMutations(['selectTodo', 'nextTodo', 'prevTodo'])
+    ...mapMutations(["selectTodo", "nextTodo", "prevTodo"])
   }
-}
+};
 </script>
 
 <style lang="scss">

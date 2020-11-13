@@ -15,18 +15,18 @@ export default {
   props: {
     title: {
       type: String,
-      default: ''
+      default: ""
     },
     left: {
       type: String,
-      default: 'chevron-left'
+      default: "chevron-left"
     },
     right: {
       type: String,
-      default: 'ellipsis-v'
+      default: "ellipsis-v"
     }
   }
-}
+};
 </script>
 
 <style lang="scss">

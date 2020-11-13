@@ -1,5 +1,5 @@
-import {createStore} from 'vuex';
-import {tomorrow} from '../utils/shared';
+import { createStore } from "vuex";
+import { tomorrow } from "../utils/shared";
 
 export default createStore({
   state() {
@@ -7,93 +7,93 @@ export default createStore({
       currentIndex: 0,
       todos: [
         {
-          icon: 'user',
-          name: 'Personal',
+          icon: "user",
+          name: "Personal",
           tasks: [
             {
               id: 1,
-              title: 'Dating',
+              title: "Dating",
               date: new Date(),
               done: false,
-              deleted: false,
-            },
+              deleted: false
+            }
           ],
-          colors: ['#96c93d', '#00b09b'],
+          colors: ["#96c93d", "#00b09b"]
         },
         {
-          icon: 'suitcase',
-          name: 'Work',
+          icon: "suitcase",
+          name: "Work",
           tasks: [
             {
               id: 3,
-              title: 'Design Sprint',
+              title: "Design Sprint",
               date: new Date(),
               done: true,
-              deleted: false,
+              deleted: false
             },
             {
               id: 4,
-              title: 'Icon Set Design for Mobile App',
+              title: "Icon Set Design for Mobile App",
               date: new Date(),
               done: false,
-              deleted: false,
+              deleted: false
             },
             {
               id: 5,
-              title: 'HTML/CSS Study',
+              title: "HTML/CSS Study",
               date: new Date(),
               done: false,
-              deleted: false,
+              deleted: false
             },
             {
               id: 6,
-              title: 'Weekly Report',
+              title: "Weekly Report",
               date: new Date(),
               done: false,
-              deleted: false,
+              deleted: false
             },
             {
               id: 7,
-              title: 'Design Meeting',
+              title: "Design Meeting",
               date: new Date(),
               done: false,
-              deleted: false,
+              deleted: false
             },
             {
-              title: 'Quick Prototyping',
-              date: new Date('2019-09-16'),
+              title: "Quick Prototyping",
+              date: new Date("2019-09-16"),
               done: false,
-              deleted: false,
+              deleted: false
             },
             {
               id: 8,
-              title: 'UX Conference',
-              date: new Date('2019-09-16'),
+              title: "UX Conference",
+              date: new Date("2019-09-16"),
               done: false,
-              deleted: false,
-            },
+              deleted: false
+            }
           ],
-          colors: ['#5B86E5', '#5B86E5'],
+          colors: ["#5B86E5", "#5B86E5"]
         },
         {
-          icon: 'home',
-          name: 'Home',
+          icon: "home",
+          name: "Home",
           tasks: [
             {
               id: 2,
-              title: 'House Keeping',
+              title: "House Keeping",
               date: new Date(),
               done: true,
-              deleted: false,
-            },
+              deleted: false
+            }
           ],
-          colors: ['#B06AB3', '#4568DC'],
-        },
+          colors: ["#B06AB3", "#4568DC"]
+        }
       ],
 
       selected: null,
       unselect: null,
-      editing: null,
+      editing: null
     };
   },
   getters: {
@@ -102,15 +102,15 @@ export default createStore({
     },
     todayTasks(state) {
       const tasks = [];
-      state.todos.forEach((todo) => {
-        todo.tasks.forEach((task) => {
+      state.todos.forEach(todo => {
+        todo.tasks.forEach(task => {
           if (task.date <= tomorrow && !task.done && !task.deleted) {
             tasks.push(task);
           }
         });
       });
       return tasks;
-    },
+    }
   },
   mutations: {
     selectTodo(state, selected) {
@@ -131,7 +131,7 @@ export default createStore({
         state.currentIndex--;
       }
     },
-    deleteTask(_, {task}) {
+    deleteTask(_, { task }) {
       task.deleted = true;
     },
     toggleEditing(state) {
@@ -140,11 +140,11 @@ export default createStore({
           title: state.editing.text,
           date: new Date(),
           done: false,
-          deleted: false,
+          deleted: false
         });
       }
-      state.editing = state.editing ? null : {text: ''};
-    },
+      state.editing = state.editing ? null : { text: "" };
+    }
   },
-  actions: {},
+  actions: {}
 });
