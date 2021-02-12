@@ -1,4 +1,4 @@
-# Simple Todo App for mobile 
+# Simple To Do List app for mobile 
 This project was created with [Vue.js](https://v3.vuejs.org/).
 
 ### Compiles and hot-reloads for development
